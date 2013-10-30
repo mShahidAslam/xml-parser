@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  agent_id: 1
+  property_name: MyString
+  status: MyString
+
+two:
+  agent_id: 1
+  property_name: MyString
+  status: MyString

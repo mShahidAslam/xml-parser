@@ -1,0 +1,20 @@
+<h1>Xml With Errors</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>XML</th>
+    <th>Error</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @xml_with_errors.each do |property| %>
+      <tr>
+        <td><%= property.id %></td>
+        <td><%= property.property_values.first.value unless property.property_values.first.nil? %></td>
+        <td><%= property.status %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

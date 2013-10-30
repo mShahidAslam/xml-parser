@@ -1,0 +1,23 @@
+<h1>Agent Property changes list</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Value</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @values.each do |property_value| %>
+      <tr>
+        <td><%= property_value.id %></td>
+        <td><%= property_value.value %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              root_path, :class => 'btn'  %>
+</div>

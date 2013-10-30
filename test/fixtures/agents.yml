@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  agent_unique_id: MyString
+  name: MyString
+
+two:
+  agent_unique_id: MyString
+  name: MyString

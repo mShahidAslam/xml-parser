@@ -1,0 +1,27 @@
+<%- model_class = Agent -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:agent_unique_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @agents.each do |agent| %>
+      <tr>
+        <td><%= agent.agent_unique_id %></td>
+        <td><%= agent.name %></td>
+        <td><%= link_to 'Show', agent_path(agent), :class => 'btn' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="form-actions">
+  <%= link_to t('.View xml with errors', :default => 'View xml with Errors'),
+              xml_with_errors_path, :class => 'btn'  %>
+</div>

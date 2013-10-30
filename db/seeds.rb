@@ -1,0 +1,7 @@
+Property.create(:name => 'xml')
+Property.create(:name => 'property_type')
+Property.create(:name => 'Address')
+Property.create(:name => 'price')
+Property.create(:name => 'number_of_bedrooms')
+Property.create(:name => 'headline')
+Property.create(:name => 'description')

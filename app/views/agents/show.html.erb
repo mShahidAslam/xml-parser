@@ -1,0 +1,41 @@
+<%- model_class = Agent -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:agent_unique_id) %>:</strong></dt>
+  <dd><%= @agent.agent_unique_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @agent.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name('Properties') %></strong></dt>
+</dl>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Update Count</th>
+    <th>View Complete Changes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @agent_properties.each do |agent_property| %>
+      <tr>
+        <td><%= agent_property.id %></td>
+        <td><%= agent_property.property.name %></td>
+        <td><%= agent_property.status %></td>
+        <td><%= agent_property.update_count %></td>
+        <td><%= link_to 'View', property_url(:id => agent_property.id)%></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              xml_with_errors_path, :class => 'btn'  %>
+</div>
